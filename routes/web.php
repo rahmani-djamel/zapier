@@ -1,10 +1,16 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::post('/zapir', function (Request $request) {
+    Log::info($request->all());
 });
 
 Route::get('/dashboard', function () {
