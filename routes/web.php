@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,6 +11,7 @@ Route::get('/', function () {
 
 Route::post('/zapir', function (Request $request) {
     Log::info($request->all());
+    return response()->json(['message' => 'Zapir received!']);
 });
 
 Route::get('/dashboard', function () {
